@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+:root{--pink:#d9799e;--deep-pink:#a94f74;--soft-pink:#fff0f5;--pale-pink:#fff8fa;--text:#624753;--muted:#9a7b88}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:"DM Sans",sans-serif;color:var(--text);background:radial-gradient(circle at 12% 15%,rgba(255,255,255,.9) 0 2px,transparent 3px),radial-gradient(circle at 88% 28%,rgba(255,255,255,.8) 0 3px,transparent 4px),linear-gradient(135deg,#fff5f8,#fce6ef 48%,#fff8fa);background-size:60px 60px,75px 75px,auto;padding:28px 16px}
+.page{width:100%;max-width:690px;margin:0 auto}.tiny-label{text-align:center;color:var(--deep-pink);letter-spacing:3px;font-size:10px;font-weight:700;margin:4px 0 17px}
+.card{background:rgba(255,255,255,.93);border:1px solid #f6d8e3;border-radius:26px;padding:clamp(22px,5vw,44px);box-shadow:0 18px 55px rgba(167,91,121,.12)}
+.bow{text-align:center;font-size:38px;color:var(--pink);line-height:1;margin-bottom:10px}.eyebrow{text-align:center;color:var(--deep-pink);text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:700;margin:0 0 12px}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:500;text-align:center;margin:0;color:#8e4565}h1{font-size:clamp(38px,8vw,56px);line-height:1.08}h1 span{font-style:italic;color:var(--pink)}h2{font-size:clamp(30px,6vw,42px)}
+.intro{text-align:center;color:var(--muted);line-height:1.7;font-size:14px;max-width:470px;margin:18px auto 32px}.question{border:0;padding:0;margin:0 0 28px;min-width:0}.question>label,.question legend{display:block;font-weight:700;font-size:14px;margin-bottom:12px;color:#774a5d}
+.mood-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mood-option{cursor:pointer;position:relative}.mood-option input{position:absolute;opacity:0;pointer-events:none}.mood-option span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:88px;background:var(--pale-pink);border:1px solid #f4dce5;border-radius:15px;transition:.18s ease;font-size:25px}.mood-option small{font-family:"DM Sans",sans-serif;color:#80596a;font-size:12px}.mood-option input:checked+span{background:#ffe4ee;border:2px solid var(--pink);box-shadow:0 4px 12px rgba(217,121,158,.13)}.mood-option input:focus-visible+span{outline:3px solid #cf6c95;outline-offset:2px}
+input[type=text],select,textarea{display:block;width:100%;border:1px solid #efd4df;border-radius:12px;background:#fffafd;color:var(--text);padding:13px 14px;font:inherit;font-size:13px;outline:none;transition:border-color .18s,box-shadow .18s}input[type=text]:focus,select:focus,textarea:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(217,121,158,.12)}textarea{resize:vertical;line-height:1.6}select{cursor:pointer}.hint{color:var(--muted);font-size:12px;margin:-6px 0 10px;line-height:1.5}.optional{color:#b39aa5;font-weight:400;font-size:12px}
+.privacy-note{display:flex;gap:10px;background:#fff4f8;padding:13px 14px;border-radius:12px;margin:4px 0 16px;color:#8a6374;font-size:11px;line-height:1.6}.privacy-note span{color:var(--pink);font-size:20px;line-height:1}.privacy-note p{margin:0}.consent{display:flex;gap:10px;align-items:flex-start;color:#8a6374;font-size:11px;line-height:1.6;margin-bottom:22px;cursor:pointer}.consent input{accent-color:var(--pink);margin-top:3px;flex:0 0 auto}
+button{border:0;width:100%;border-radius:999px;padding:15px 20px;background:var(--pink);color:white;font:inherit;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 7px 18px rgba(217,121,158,.24);transition:transform .18s,background .18s}button:hover{background:#cb6b92;transform:translateY(-1px)}button:disabled{opacity:.65;cursor:wait;transform:none}.small-note{text-align:center;color:#ad929e;font-size:10px;margin:13px 0 0}.error-message{color:#b4234c;font-size:12px;text-align:center}.hidden{display:none}.success-card{text-align:center;padding-top:46px;padding-bottom:46px}.success-flower{font-size:48px;color:var(--pink);margin-bottom:14px}.gentle-message{background:var(--pale-pink);border:1px solid #f4dce5;border-radius:15px;padding:18px;margin:24px 0;font-family:"Playfair Display",Georgia,serif;font-size:19px;font-style:italic;line-height:1.5;color:#92526f}.secondary-button{background:#fff0f5;color:#a94f74;box-shadow:none;border:1px solid #f3c6d6}.secondary-button:hover{background:#ffe4ee}footer{text-align:center;color:#b18b9b;font-size:10px;letter-spacing:1px;margin:20px 0 4px}footer span{color:var(--pink)}
+@media(max-width:430px){body{padding:18px 11px}.card{border-radius:21px}.mood-grid{gap:7px}.mood-option span{min-height:80px;border-radius:12px}.mood-option small{font-size:11px}}
+
+/* Cute floating dreamy music player */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #f3c5d8;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(190, 100, 140, 0.15);
+    max-width: calc(100% - 40px);
+}
+
+#musicToggle {
+    width: auto;
+    min-width: 0;
+    margin: 0;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 25px;
+    background: #d979a0;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+#musicToggle:hover {
+    background: #c9628b;
+}
+
+#musicStatus {
+    color: #a45c7c;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        bottom: 12px;
+        right: 12px;
+        gap: 6px;
+        padding: 6px 8px;
+    }
+
+    #musicToggle {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    #musicStatus {
+        font-size: 10px;
+    }
+}

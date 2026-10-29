@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Are You, Really? ♡</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+<div class="tiny-label">A LITTLE SPACE JUST FOR YOU ♡</div>
+
+<section class="card" id="formCard">
+<div class="bow">୨୧</div>
+<p class="eyebrow">take a little breath</p>
+<h1>How are you,<br><span>really?</span></h1>
+<p class="intro">You don't have to pretend you're okay here. Share as much or as little as you want. There's no right answer. ♡</p>
+
+<form id="checkInForm">
+<fieldset class="question">
+<legend>01. How are you feeling today?</legend>
+<div class="mood-grid">
+<label class="mood-option"><input type="radio" name="mood" value="Happy" required><span>☀️<small>Happy</small></span></label>
+<label class="mood-option"><input type="radio" name="mood" value="Okay"><span>🌷<small>Okay</small></span></label>
+<label class="mood-option"><input type="radio" name="mood" value="Tired"><span>☁️<small>Tired</small></span></label>
+<label class="mood-option"><input type="radio" name="mood" value="Sad"><span>🌧️<small>Sad</small></span></label>
+<label class="mood-option"><input type="radio" name="mood" value="Overwhelmed"><span>🫧<small>Overwhelmed</small></span></label>
+<label class="mood-option"><input type="radio" name="mood" value="Not sure"><span>🪻<small>Not sure</small></span></label>
+</div>
+</fieldset>
+
+<div class="question">
+<label for="day">02. How has your day been?</label>
+<select id="day" name="day" required>
+<option value="" disabled selected>Choose whatever feels closest ♡</option>
+<option>Pretty good, actually</option>
+<option>Just an ordinary day</option>
+<option>A little difficult</option>
+<option>Really hard</option>
+<option>I don't know how to describe it</option>
+</select>
+</div>
+
+<div class="question">
+<label for="need">03. What do you need most right now?</label>
+<select id="need" name="need" required>
+<option value="" disabled selected>It's okay if you're not sure</option>
+<option>Someone to listen</option>
+<option>Comfort and reassurance</option>
+<option>A distraction</option>
+<option>Some quiet time</option>
+<option>Help figuring things out</option>
+<option>I'm not sure yet</option>
+</select>
+</div>
+
+<div class="question">
+<label for="message">04. Is there anything on your mind?</label>
+<p class="hint">You can vent, write one sentence, or leave this blank.</p>
+<textarea id="message" name="message" rows="5" maxlength="3000" placeholder="Take your time. I'm listening..."></textarea>
+</div>
+
+<div class="question">
+<label for="name">05. What should we call you? <span class="optional">(optional)</span></label>
+<input type="text" id="name" name="name" maxlength="80" placeholder="Your name or nickname">
+</div>
+
+<div class="privacy-note">
+<span>♡</span>
+<p>Your answers will be saved to a private Google Sheet that the form owner can read. Please don't include passwords or details you wouldn't want the owner to see.</p>
+</div>
+
+<label class="consent">
+<input type="checkbox" id="consent" required>
+<span>I understand that my answers will be saved and can be read by the form owner.</span>
+</label>
+
+<button type="submit" id="submitButton">Send my check-in ♡</button>
+<p class="small-note">Share only what feels comfortable. You can skip the message.</p>
+<p class="error-message" id="errorMessage" role="alert"></p>
+</form>
+</section>
+
+<section class="card success-card hidden" id="successCard" aria-live="polite">
+<div class="success-flower">✿</div>
+<p class="eyebrow">your check-in is complete</p>
+<h2>Thank you for sharing. ♡</h2>
+<p class="intro">Whatever you're feeling, you don't have to have everything figured out today.</p>
+<div class="gentle-message" id="gentleMessage">Take a slow breath. Be gentle with yourself today.</div>
+<button type="button" id="anotherButton" class="secondary-button">Fill it out again</button>
+</section>
+
+<footer>made with care, just for you <span>♡</span></footer>
+</main>
+
+<!-- Dreamy lo-fi music player -->
+<div class="music-player">
+    <button type="button" id="musicToggle" aria-label="Play background music">
+        ♪ Play Music
+    </button>
+    <span id="musicStatus">a little song for you ♡</span>
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="music/dreamy-lofi.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
